@@ -8,3 +8,6 @@ insert into library values (7, 'xyz, abc, efg','A Library');
 insert into library values (8, 'xyz, abc, efg','B Library');
 insert into library values (9, 'xyz, abc, efg','D Library');
 insert into library values (10, 'xyz, abc, efg','C Library');
+insert into Customer values (1, 'ADMIN','pwd1','rkm1');
+insert into Customer values (2, 'USER','pwd2','rkm2');
+insert into Customer values (3, 'USER','pwd3','rkm3');
