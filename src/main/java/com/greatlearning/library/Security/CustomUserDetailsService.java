@@ -1,5 +1,6 @@
 package com.greatlearning.library.Security;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +27,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		Customer customer = repo.findByUsername(username);
-		return User.withUsername(customer.getUsername()).password(passwordEncoder().encode(customer.getPassword())).authorities(customer.getAuthorities()).build();
+		return User.withUsername(customer.getUsername()).password(customer.getPassword()).authorities(Collections.singleton(new SimpleGrantedAuthority(customer.getAuthorities()))).credentialsExpired(false).accountExpired(false).accountLocked(false).disabled(false).build();
 	}
 	
 	@Bean
